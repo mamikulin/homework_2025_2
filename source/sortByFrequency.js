@@ -4,12 +4,11 @@
  * @param {number[]} numbers - Массив чисел.
  * @returns {number[]} Новый отсортированный массив.
  */
-
 const sortByFrequency = function(numbers){
     const fMap = {};
 
     numbers.forEach(element => {
-        fMap[element] = (fMap[element] || 0) + 1
+        fMap[element] = (fMap[element] || 0) + 1;
     });
 
     return [...numbers].sort((a, b) => 

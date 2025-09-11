@@ -1,17 +1,24 @@
+"use strict"
+
 /**
  * Сортирует массив чисел по убыванию частоты встречаемости.
  * При равной частоте — по возрастанию значения.
  * @param {number[]} numbers - Массив чисел.
  * @returns {number[]} Новый отсортированный массив.
- */
+*/
 const sortByFrequency = function(numbers){
-    const fMap = {};
+
+    if (!numbers.length) {
+        return [];
+    }
+    
+    const frequencyMap = {};
 
     numbers.forEach(element => {
-        fMap[element] = (fMap[element] || 0) + 1;
+        frequencyMap[element] = (frequencyMap[element] || 0) + 1;
     });
 
     return [...numbers].sort((a, b) => 
-        fMap[b] - fMap[a] || a - b
+        frequencyMap[b] - frequencyMap[a] || a - b
     );
 }

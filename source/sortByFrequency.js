@@ -6,12 +6,12 @@
  * @param {number[]} numbers - Массив чисел.
  * @returns {number[]} Новый отсортированный массив.
 */
-const sortByFrequency = function(numbers){
+const sortByFrequency = (numbers) =>{
 
     if (!numbers.length) {
         return [];
     }
-    
+
     const frequencyMap = {};
 
     numbers.forEach(element => {
